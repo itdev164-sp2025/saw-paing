@@ -5,13 +5,16 @@ import styled, { ThemeProvider } from "styled-components"
 import { Header } from "./Header"
 import "./layout.css"
 import { Gray } from "./themes/Gray"
-import { Main } from './Main'
-import { Footer } from './Footer'
 
 const Content = styled.div`
   margin: 0 auto;
   max-width: var(--size-content);
   padding: var(--size-gutter);
+`
+
+const Footer = styled.footer`
+  margin-top: var(--space-5);
+  font-size: var(--font-sm);
 `
 
 const Layout = ({ children }) => {
@@ -29,7 +32,7 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={Gray} >
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <Content>
-        <Main>{children}</Main>
+        <main>{children}</main>
         <Footer>
           © {new Date().getFullYear()} &middot; Built with
           {` `}
